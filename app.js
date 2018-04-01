@@ -33,8 +33,8 @@ app.use('/data', function (request, response) {
                 var index = i+1;
                 var temp = res[2*i];
                 var humi = res[2*i+1];
-                data['c' + index + 't'] = temp !== null ? temp : '--.-';
-                data['c' + index + 'h'] = humi !== null ? humi : '--';
+                data['c' + index + 't'] = temp !== null ? parseFloat(temp) : '--.-';
+                data['c' + index + 'h'] = humi !== null ? parseInt(humi) : '--';
             }
             response.json(data);
         });
