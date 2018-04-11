@@ -1,0 +1,17 @@
+[Unit]
+Description=Raumklima Web
+Requires=After=redis.service
+
+[Service]
+ExecStart=/usr/bin/nodejs /opt/raumklima-web/app.js
+WorkingDirectory=/opt/raumklima-web
+Restart=always
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=raumklima-web
+User=rk-web
+Group=rk-web
+
+[Install]
+WantedBy=multi-user.target
