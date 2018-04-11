@@ -29,7 +29,7 @@ app.use('/data', function (request, response) {
                 return;
             }
             var data = {};
-            for (var i = 0; i <= 8; i++) {
+            for (var i = 0; i < 8; i++) {
                 var index = i+1;
                 var temp = res[2*i];
                 var humi = res[2*i+1];
